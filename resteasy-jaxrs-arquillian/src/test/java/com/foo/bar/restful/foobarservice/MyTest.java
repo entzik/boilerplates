@@ -1,3 +1,5 @@
+package com.foo.bar.restful.foobarservice;
+
 import junit.framework.TestCase;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
