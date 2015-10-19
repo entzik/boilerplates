@@ -39,7 +39,7 @@ public class MyTest {
 
     @Deployment
     public static Archive<?> createDeployment() {
-        File file = new File("build/libs/sample-restful-1.0.0-SNAPSHOT.war");
+        File file = new File("build/libs/resteasy-jaxrs-arquillian-1.0.0-SNAPSHOT.war");
         if (!file.exists())
             TestCase.fail("file does not exist: " + file.getAbsolutePath());
         return  ShrinkWrap.create(ZipImporter.class, "sample-restful.war")
