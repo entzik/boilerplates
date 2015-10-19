@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.0.13.Final'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '3.0.13.Final'
+    compile group: 'org.jboss.spec', name: 'jboss-javaee-6.0', version: '1.0.0.Final'
+
+    testCompile 'junit:junit:4.+'
+    testCompile 'org.jboss.arquillian:arquillian-bom:1.1.8.Final'
+    testCompile 'org.jboss.arquillian.junit:arquillian-junit-container:1.1.8.Final'
+    testCompile 'org.jboss.arquillian.container:arquillian-tomcat-embedded-8:1.0.0.CR7'
+    testCompile 'org.jboss.arquillian.container:arquillian-tomcat-embedded-8:1.0.0.CR7'
+    testCompile 'org.apache.tomcat:jasper:6.0.44'
+    testCompile 'org.apache.tomcat:tomcat-catalina:8.0.27'
+}
+
+war {
+    from 'src/main/webapp'
+    webInf { from 'src/main/webapp/WEB-INF' }
+    webXml = file('src/main/webapp/WEB-INF/web.xml')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6' //version required
+}
