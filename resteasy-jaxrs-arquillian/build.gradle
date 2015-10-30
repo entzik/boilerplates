@@ -6,6 +6,24 @@ repositories {
     mavenCentral()
 }
 
+idea {
+    module {
+        iml {
+            withXml {
+                IdeaEnricher.updateWebFacet(this.project, it.asNode())
+            }
+        }
+    }
+    project {
+        ipr {
+            withXml {
+                IdeaEnricher.updateWebArtifacts(this.project, it.asNode())
+                IdeaEnricher.updateBuildOutputFolderForGradle(this.project, it.asNode())
+            }
+        }
+    }
+}
+
 dependencies {
     compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.0.13.Final'
     compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '3.0.13.Final'

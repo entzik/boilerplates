@@ -21,7 +21,7 @@ import java.net.URL;
  * Created by emilkirschner on 12/10/15.
  */
 @RunWith(Arquillian.class)
-public class MyTest {
+public class FoobarServiceV1Test {
     @ArquillianResource
     private URL baseUrl;
 
@@ -33,7 +33,10 @@ public class MyTest {
             ClientRequest clientRequest = new ClientRequest(url);
             ClientResponse clientResponse = clientRequest.get();
             TestCase.assertEquals(ClientResponse.Status.OK, clientResponse.getResponseStatus());
-            TestCase.assertEquals("{\"x\":\"delivery\",\"y\":12}", clientResponse.getEntity(String.class));
+//            TestCase.assertEquals("{\"x\":\"delivery\",\"y\":12}", clientResponse.getEntity(String.class));
+            Payload entity = (Payload) clientResponse.getEntity(Payload.class);
+            TestCase.assertEquals("delivery", entity.getX());
+            TestCase.assertEquals(12, entity.getY());
         } catch (Exception e) {
             TestCase.fail(e.toString());
         }

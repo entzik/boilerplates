@@ -7,6 +7,9 @@ public class Payload {
     String x;
     int y;
 
+    public Payload() {
+    }
+
     public Payload(String x, int y) {
         this.x = x;
         this.y = y;
