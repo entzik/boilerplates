@@ -9,6 +9,10 @@
         <session-timeout>120</session-timeout>
     </session-config>
 
+    <listener>
+        <listener-class>com.foo.bar.restful.foobarservice.ContextListener</listener-class>
+    </listener>
+
     <context-param>
         <param-name>org.jboss.resteasy.resteasy-jackson-provider</param-name>
         <param-value>true</param-value>

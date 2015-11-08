@@ -28,6 +28,10 @@ dependencies {
     compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '3.0.13.Final'
     compile group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '3.0.13.Final'
     compile group: 'org.jboss.spec', name: 'jboss-javaee-6.0', version: '1.0.0.Final'
+    compile group: 'io.dropwizard.metrics', name: 'metrics-core', version: '3.1.2'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.12'
+    compile group: 'log4j', name: 'apache-log4j-extras', version: '1.2.17'
 
     testCompile 'junit:junit:4.+'
     testCompile 'org.jboss.arquillian:arquillian-bom:1.1.8.Final'
